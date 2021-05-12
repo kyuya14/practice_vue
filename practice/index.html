@@ -2,71 +2,18 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="css/style.css">
-  <title>Vue sample</title>
+  <title>watch, deep</title>
 </head>
 <body>
   <div id="app">
-    <p>{{ sayHi() }}</p>
-    <!-- <a v-bind:href="url" >google</a> -->
-    <a :[attribute]="url" >google</a>
-    <a v-bind="TwitterObjedt" >Twitter</a>
-
-    <p>{{number}}回クリックしました</p>
-    <button @[event]="countUp(1)">クリック</button>
-
-    <p v-on:mousemove="changemousePosition($event,10)">マウスを移動してください。<span v-on:mousemove.stop>反応しなくなります。</span></p>
-    <p>x:{{x}},y:{{y}}</p>
-
-    <a v-on:click.prevent href="https://google.com">Google</a>
-
-    <input type="text" v-on:keyup.enter="keyup()">
-    <input type="text" v-model="msg">{{msg}}
-
-    <div>
-      <button @[event]="changeif()">changeif</button>
-      <p v-show="dataif">{{ message }} </p>
-    </div>
-
-    
-    <div>
-      <ol>
-        <li v-for="color in colors">
-          {{ color }}
-        </li>
-      </ol>
-      <ul>
-        <li v-for="user in users">
-          {{ user.keys }}: {{ user }}
-        </li>
-        <hr>
-        <li v-for="(user,key) in users">
-          {{ key }}: {{ user }}
-        </li>
-      </ul>
-      
-      <button v-on:click="onclick()">now date </button>
-      <p> {{ nowdate }}</p>
-    </div>
-    
-    <p><input type="text" v-model="messageObject"></p>
-    <p><input type="text" v-model="messageObject"></p>
-    <pre>{{ $data.messageObject }}</pre>
-
-    <hello-component></hello-component>
-    <hello-component></hello-component>
-    <hello-component></hello-component>
-
+    <ul>
+      <li v-for="color in colors">{{ color.name }} </li>
+    </ul>
   </div>
-
-
-  <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2"></script> -->
-  <script src="js/vue.js"></script>
-  <script src="js/main.js"></script>
-
-
   
+  <script src="js/vue.js"></script>
+  <script src="js/main2.js"></script>
 </body>
 </html>
