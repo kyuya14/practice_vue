@@ -1,25 +1,18 @@
 var app = new Vue({
-  el:"#app",
+  el: '#app',
   data: {
-    message: 'Hello world',
-    googleObject: {
-      url:'https://google.com',
-      msg:'Google'
-    },
-    languages:[
-      'Javascript',
-      'Python',
-      'Ruby',
-    ],
-    tuggle:false,
+    colors: [
+      { name : 'Red'},
+      { name : 'Green'},
+      { name : 'Blue'}
+    ]
   },
-  methods: {
-    onClick:function(){
-      if(this.tuggle){
-        this.tuggle = false
-      }else{
-        this.tuggle = true
-      }
+  watch: {
+    colors: {
+      handler: function(newValue,oldValue) {
+        console.log('Update!')
+      },
+      deep:true
     }
   }
 })
