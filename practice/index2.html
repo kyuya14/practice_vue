@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Vue sample</title>
+</head>
+<body>
+  <div id='app'>
+    <p>{{ message }}</p>
+    <a v-bind:href="googleObject.url">{{ googleObject.msg }}</a>
+    <p>
+      <button v-on:click='onClick()'>Click</button>
+      <p v-show="tuggle">{{ message }}</p>
+    </p>
+    <ul>
+      <li v-for="language in languages">{{ language }}</li>
+    </ul>
+    <input type="text" v-model="message">
+
+  </div>
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2"></script> -->
+  <script src="js/vue.js"></script>
+  <script src="js/main2.js"></script>
+
+</body>
+</html>
