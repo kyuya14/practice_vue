@@ -4,14 +4,14 @@ FROM node:10.15.3-alpine
 #working directory
 WORKDIR /app
 
-#vuecliインストール
-RUN npm install -g @vue/cli
+# nppm install
+RUN npm install && \
+    npm install -g @vue/cli && \
+    npm install --save axios vue-axios
 
-#shファイルをコンテナにコピー
-COPY ./scripts/start.sh /scripts/start.sh
+#vuecli 
+# RUN npm install -g @vue/cli
 
-#shフォルダの権限追加（全員実行可）
-RUN chmod +x /scripts/*
-
-#初期実行
-# ENTRYPOINT [ "/scripts/start.sh" ]
+# axios install
+# CMD ["npm", "install", "--save", "axios", "vue-axios"]
+# RUN npm install --save axios vue-axios

@@ -1,0 +1,17 @@
+version: '3.7'
+
+services: 
+  app:
+    # build:Dockerfile is there
+    build: ./work
+    # volume: mount point(local:remote)
+    volumes: 
+      - ./work:/app
+      # ports(local:remote)
+    ports:
+      - 8080:8080
+      
+    command: /bin/sh
+
+    stdin_open: true
+    tty: true
