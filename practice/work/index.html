@@ -4,16 +4,18 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
   <title>watch, deep</title>
 </head>
 <body>
   <div id="app">
-    <ul>
-      <li v-for="color in colors">{{ color.name }} </li>
-    </ul>
+    <p v-bind:class="{large:isLarge,color:isColor }">Vue js</p>
+    <p v-bind:class="[large,color]">Vue js</p>
+    <p v-bind:class="classObject">Vue js</p>
+    <p v-bind:class="isLarge ? classObject : '' ">Vue js</p>
   </div>
-  
+
   <script src="js/vue.js"></script>
-  <script src="js/main2.js"></script>
+  <script src="js/main3.js"></script>
 </body>
 </html>
