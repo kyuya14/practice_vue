@@ -5,8 +5,10 @@ FROM node:10.15.3-alpine
 WORKDIR /app
 
 # nppm install
-RUN npm install && \
+RUN apk update && \
+    npm install && \
     npm install -g @vue/cli && \
+    npm install -g npm && \
     npm install --save axios vue-axios
 
 #vuecli 
