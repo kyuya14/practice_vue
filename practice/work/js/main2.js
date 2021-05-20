@@ -1,18 +1,16 @@
 var app = new Vue({
   el: '#app',
   data: {
-    colors: [
-      { name : 'Red'},
-      { name : 'Green'},
-      { name : 'Blue'}
-    ]
+    counter: 0,
+    message: ""
   },
-  watch: {
-    colors: {
-      handler: function(newValue,oldValue) {
-        console.log('Update!')
-      },
-      deep:true
+  methods: {
+    onclick:function() {
+      this.counter += 1
+    },
+    clear:function() {
+      this.message = ""
+      console.log("event!")
     }
   }
 })

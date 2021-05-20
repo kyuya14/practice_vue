@@ -9,17 +9,13 @@
 </head>
 <body>
   <div id='app'>
-    <p>{{ message }}</p>
-    <a v-bind:href="googleObject.url">{{ googleObject.msg }}</a>
+    <p>{{ counter }}</p>
+    <button v-on:click="onclick">click!</button>
+    <button @click="onclick">click!</button>
     <p>
-      <button v-on:click='onClick()'>Click</button>
-      <p v-show="tuggle">{{ message }}</p>
+      <input type="text" v-on:keyup.esc="clear" v-model="message">
+      {{ message }}
     </p>
-    <ul>
-      <li v-for="language in languages">{{ language }}</li>
-    </ul>
-    <input type="text" v-model="message">
-
   </div>
 
   <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2"></script> -->
